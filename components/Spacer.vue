@@ -1,27 +1,23 @@
 <template>
-  <div :class="`${getDirectionLetter(direction)}-${spacing}`">
+  <div :style="spacingStyle">
     <slot></slot>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Spacing } from "@/types"
+import { getSpacingStyle } from "@/utils"
 
-interface Props {
-  spacing: Spacing
-  direction?: "vertical" | "horizontal" | "all"
+type Props = {
+  pt?: Spacing
+  pb?: Spacing
+  pr?: Spacing
+  pl?: Spacing
+  py?: Spacing
+  px?: Spacing
 }
 
-const getDirectionLetter = (direction: Props["direction"] = "all") => {
-  switch (direction) {
-    case "all":
-      return "p"
-    case "vertical":
-      return "py"
-    case "horizontal":
-      return "px"
-  }
-}
+const props = defineProps<Props>()
 
-defineProps<Props>()
+const spacingStyle = getSpacingStyle(props)
 </script>

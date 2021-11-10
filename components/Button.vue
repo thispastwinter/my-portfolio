@@ -1,6 +1,6 @@
 <template>
   <button :class="getButtonClass(variant)">
-    <Spacer spacing="2">
+    <Spacer py="2" px="3">
       <Typography :color="getTypographyColor(variant)">
         {{title}}
       </Typography>
