@@ -1,9 +1,5 @@
 <template>
-  <div class="bg-primary">
-    <Spacer pl="3" py="3">
-      <Typography color="mintCream" variant="title1">Justin Klaas</Typography>
-    </Spacer>
-  </div>
+  <Header />
   <Spacer px="3">
     <div class="bio-wrapper">
       <Spacer py="3">
@@ -32,4 +28,5 @@ const onClick = () => {
   max-width: 40rem;
   width: "100%";
 }
+
 </style>

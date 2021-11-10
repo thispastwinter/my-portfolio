@@ -5,6 +5,8 @@
 <script setup lang="ts">
 import { Colors, TypeStyles } from '@/types'
 
+const { colors } = useTheme()
+
 const typeStyles = useTypeStyles()
 
 interface Props {
@@ -17,7 +19,7 @@ defineProps<Props>()
 const getTypographyStyle = ({ color = "richBlack", variant = "regular" }: Props) => {
   return {
     ...typeStyles[variant],
-    color,
+    color: colors[color],
   }
 }
 
